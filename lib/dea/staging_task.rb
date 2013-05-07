@@ -443,6 +443,7 @@ module Dea
       {
         "PLATFORM_CONFIG" => workspace.platform_config_path,
         "BUILDPACK_CACHE" => staging_config["environment"]["BUILDPACK_CACHE"],
+        "PATH" => staging_config["environment"]["PATH"],
         "STAGING_TIMEOUT" => staging_timeout
       }.map { |k, v| "#{k}=#{v}" }.join(" ")
     end
