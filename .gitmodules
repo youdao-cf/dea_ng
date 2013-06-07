@@ -13,3 +13,6 @@
 [submodule "buildpacks/vendor/python"]
 	path = buildpacks/vendor/python
 	url = https://github.com/youdao-cf/youdao-buildpack-python.git
+[submodule "buildpacks/vendor/php"]
+	path = buildpacks/vendor/php
+	url = https://github.com/youdao-cf/youdao-buildpack-php.git

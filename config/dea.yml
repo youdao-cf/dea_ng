@@ -3,7 +3,7 @@
 # Base directory for dea, application directories, dea temp files, etc. are all relative to this.
 base_dir: /tmp/dea_ng
 
-domain: vcap.me
+domain: cf2.youdao.com
 
 logging:
   level: debug2
@@ -26,7 +26,7 @@ pid_filename: /tmp/dea_ng.pid
 
 warden_socket: /tmp/warden.sock
 
-evacuation_delay_secs: 5
+evacuation_delay_secs: 15
 
 index: 0
 
@@ -39,12 +39,13 @@ staging:
     BUILDPACK_CACHE: /home/vcap/buildpack_cache
   memory_limit_mb: 1024
   disk_limit_mb: 2048
-  max_staging_duration: 30 # 15 minutes
+  max_staging_duration: 900 # 15 minutes
 
 dea_ruby: /home/vcap/.rvm/rubies/ruby-1.9.3-p392/bin/ruby
 
 bind_mounts:
   - src_path: /home/vcap/.rvm
+  - src_path: /home/vcap/libs
 
 app_environment:
   - PATH: /home/vcap/.rvm/gems/ruby-1.9.3-p392/bin:/home/vcap/.rvm/gems/ruby-1.9.3-p392@global/bin:/home/vcap/.rvm/rubies/ruby-1.9.3-p392/bin:/home/vcap/.rvm/bin:/usr/java/jdk/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/vcap/bin:/home/vcap/.rvm/bin:$PATH
@@ -54,12 +55,17 @@ directory_server:
   v1_port: 4385
   v2_port: 5678
   file_api_port: 1234
-  streaming_timeout: 10
+  streaming_timeout: 100
   logging:
-    level: info
+    level: debug
 
 stacks:
   - lucid64
+
+status:
+  port: 11112
+  user: varz
+  pass: varz
 
 # Hook scripts for droplet start/stop
 # hooks:
