@@ -3,10 +3,16 @@
 	url = https://github.com/cloudfoundry/heroku-buildpack-nodejs.git
 [submodule "buildpacks/vendor/java"]
 	path = buildpacks/vendor/java
-	url = https://github.com/cloudfoundry/cloudfoundry-buildpack-java.git
+	url = https://github.com/youdao-cf/cloudfoundry-buildpack-java.git
 [submodule "buildpacks/vendor/ruby"]
 	path = buildpacks/vendor/ruby
 	url = https://github.com/cloudfoundry/heroku-buildpack-ruby.git
 [submodule "go/vendor"]
 	path = go/vendor
 	url = https://github.com/cloudfoundry/govendor
+[submodule "buildpacks/vendor/python"]
+	path = buildpacks/vendor/python
+	url = https://github.com/youdao-cf/youdao-buildpack-python.git
+[submodule "buildpacks/vendor/php"]
+	path = buildpacks/vendor/php
+	url = https://github.com/youdao-cf/youdao-buildpack-php.git
